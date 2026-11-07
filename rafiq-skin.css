@@ -1,0 +1,408 @@
+/* ============================================================
+   رفيق المسلم — الجلد النهاري الموحّد لكل التطبيقات المدمجة
+   يعمل عبر html[data-rfq-light] (يضيفه rafiq-skin.js)
+   الحالة الافتراضية (بدون السمة) = الوضع الليلي الأصلي كما هو
+   ============================================================ */
+
+html[data-rfq-light]{ color-scheme:light; }
+
+/* ---------- الأساس ---------- */
+html[data-rfq-light] body{
+  background:#fbf7ef!important;
+  color:#2b2115!important;
+  background-image:
+    radial-gradient(900px 480px at 10% -8%,rgba(201,162,39,.20),transparent 62%),
+    radial-gradient(820px 460px at 92% 2%,rgba(15,125,91,.09),transparent 60%),
+    linear-gradient(180deg,#fffdf8 0%,#fbf7ef 44%,#f5eddc 100%)!important;
+  background-attachment:fixed!important;
+}
+html[data-rfq-light] ::selection{background:rgba(201,162,39,.30);color:#2b2115}
+
+/* ---------- تحويل الأسطح الداكنة المكتوبة داخل الأنماط ---------- */
+html[data-rfq-light] [style*="background:#05101e"],
+html[data-rfq-light] [style*="background: #05101e"],
+html[data-rfq-light] [style*="background:#020c1e"],
+html[data-rfq-light] [style*="background: #020c1e"],
+html[data-rfq-light] [style*="background:#071b16"],
+html[data-rfq-light] [style*="background:#0b1324"],
+html[data-rfq-light] [style*="background:#0b1220"],
+html[data-rfq-light] [style*="background:#0f172a"],
+html[data-rfq-light] [style*="background: #0f172a"],
+html[data-rfq-light] [style*="background:#111c2e"],
+html[data-rfq-light] [style*="background:#1e293b"],
+html[data-rfq-light] [style*="background:rgba(5,16,30"],
+html[data-rfq-light] [style*="background: rgba(5,16,30"],
+html[data-rfq-light] [style*="background:rgba(2,12,30"],
+html[data-rfq-light] [style*="background:rgba(16,30,52"],
+html[data-rfq-light] [style*="background:rgba(15,23,42"],
+html[data-rfq-light] [style*="background:rgba(30,41,59"],
+html[data-rfq-light] [style*="background:rgba(19,29,52"],
+html[data-rfq-light] [style*="background:linear-gradient(180deg,rgba(11,19,36"],
+html[data-rfq-light] [style*="background:rgba(5,11,20"]{
+  background:#fffdf8!important;
+  border-color:rgba(163,120,19,.22)!important;
+}
+
+/* الأسطح الشفافة الفاتحة على خلفية داكنة → بيضاء دافئة */
+html[data-rfq-light] [style*="rgba(255,255,255,.03)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.04)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.05)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.06)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.07)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.08)"],
+html[data-rfq-light] [style*="rgba(255,255,255,.1)"]{
+  background:rgba(255,255,255,.86)!important;
+  border-color:rgba(163,120,19,.20)!important;
+}
+
+/* ---------- تحويل النصوص الفاتحة ---------- */
+html[data-rfq-light] [style*="color:#f8fafc"],
+html[data-rfq-light] [style*="color: #f8fafc"],
+html[data-rfq-light] [style*="color:#f1f5f9"],
+html[data-rfq-light] [style*="color:#e2e8f0"],
+html[data-rfq-light] [style*="color:#f0f4ff"],
+html[data-rfq-light] [style*="color:#e8f0ff"],
+html[data-rfq-light] [style*="color:#fff"],
+html[data-rfq-light] [style*="color:#ffffff"]{color:#2b2115!important}
+html[data-rfq-light] [style*="color:#94a3b8"],
+html[data-rfq-light] [style*="color:#8fabd4"],
+html[data-rfq-light] [style*="color:#cbd5e1"],
+html[data-rfq-light] [style*="color:#9fb0c7"]{color:#7b6a4f!important}
+html[data-rfq-light] [style*="color:#fbbf24"],
+html[data-rfq-light] [style*="color:#fcd34d"],
+html[data-rfq-light] [style*="color:#fcd777"],
+html[data-rfq-light] [style*="color:#f5d77a"],
+html[data-rfq-light] [style*="color:#d4af37"],
+html[data-rfq-light] [style*="color:#d4a847"]{color:#8a6408!important}
+
+/* ---------- القرآن الكريم ---------- */
+html[data-rfq-light] .app-shell{background:transparent!important}
+html[data-rfq-light] .top-bar,
+html[data-rfq-light] .header,
+html[data-rfq-light] .app-header,
+html[data-rfq-light] .navbar,
+html[data-rfq-light] .toolbar{
+  background:rgba(255,253,248,.94)!important;
+  border-color:rgba(163,120,19,.22)!important;
+  color:#2b2115!important;
+  box-shadow:0 6px 22px rgba(120,88,23,.09)!important;
+}
+html[data-rfq-light] .surah-card,
+html[data-rfq-light] .ayah,
+html[data-rfq-light] .card,
+html[data-rfq-light] .modal,
+html[data-rfq-light] .panel,
+html[data-rfq-light] .dl-bar,
+html[data-rfq-light] .audio-player-container{
+  background:rgba(255,255,255,.90)!important;
+  border-color:rgba(163,120,19,.22)!important;
+  color:#2b2115!important;
+  box-shadow:0 6px 22px rgba(120,88,23,.08)!important;
+}
+html[data-rfq-light] .ayah-text,
+html[data-rfq-light] .surah-name,
+html[data-rfq-light] .current-surah-name{color:#0f5d43!important}
+html[data-rfq-light] .btn-icon{background:#fffdf8!important;color:#8a6408!important;border:1px solid rgba(163,120,19,.28)!important}
+html[data-rfq-light] .ayah-result-item{background:rgba(255,255,255,.9)!important;border-color:rgba(163,120,19,.2)!important}
+html[data-rfq-light] .ayah-result-text{color:#2b2115!important}
+html[data-rfq-light] .ayah-result-meta,
+html[data-rfq-light] .ayah-result-page{color:#8a7758!important}
+
+/* ---------- المسابقة ---------- */
+html[data-rfq-light] .wrap{color:#2b2115!important}
+html[data-rfq-light] .card,
+html[data-rfq-light] .kpi,
+html[data-rfq-light] .auth,
+html[data-rfq-light] .board{
+  background:rgba(255,255,255,.90)!important;
+  border-color:rgba(163,120,19,.24)!important;
+  color:#2b2115!important;
+  box-shadow:0 10px 30px rgba(120,88,23,.10)!important;
+}
+html[data-rfq-light] .top{background:transparent!important}
+html[data-rfq-light] h1,html[data-rfq-light] h2,html[data-rfq-light] h3{color:#8a6408!important}
+html[data-rfq-light] .fl input,html[data-rfq-light] .fl select{
+  background:#fffdf8!important;color:#2b2115!important;border-color:rgba(163,120,19,.30)!important;
+}
+html[data-rfq-light] .medal,html[data-rfq-light] .log{color:#5d4c33!important}
+html[data-rfq-light] .btn.ghost{background:#fffdf8!important;color:#8a6408!important;border-color:rgba(163,120,19,.40)!important}
+
+/* ---------- حياة الصحابة ---------- */
+html[data-rfq-light] .sb-ov{background:transparent!important;color:#2b2115!important}
+html[data-rfq-light] .sb-hero,
+html[data-rfq-light] .sb-reader,
+html[data-rfq-light] .sb-card,
+html[data-rfq-light] .sb-tabs,
+html[data-rfq-light] .sb-featured,
+html[data-rfq-light] .sb-bookmark-reader,
+html[data-rfq-light] .hadith{
+  background:rgba(255,255,255,.90)!important;
+  border-color:rgba(163,120,19,.22)!important;
+  color:#2b2115!important;
+}
+html[data-rfq-light] .hadith{background:linear-gradient(135deg,rgba(201,162,39,.12),rgba(255,255,255,.9))!important}
+html[data-rfq-light] .sb-hero-title,
+html[data-rfq-light] .sb-featured-title,
+html[data-rfq-light] .sb-reader h1,
+html[data-rfq-light] .sb-reader h2,
+html[data-rfq-light] .sb-reader h3{color:#8a6408!important}
+html[data-rfq-light] .sb-disclaimer{background:rgba(201,162,39,.10)!important;border-color:rgba(163,120,19,.25)!important;color:#5d4c33!important}
+html[data-rfq-light] .sb-disclaimer-text{color:#5d4c33!important}
+
+/* ---------- المسلم الصغير ---------- */
+html[data-rfq-light] .cov{color:#2b2115!important}
+html[data-rfq-light] .card,
+html[data-rfq-light] .crt-list,
+html[data-rfq-light] .bbtn{
+  color:#2b2115!important;
+}
+html[data-rfq-light] .card-nm,
+html[data-rfq-light] .crt-ttl{color:#8a6408!important}
+html[data-rfq-light] .bnxt,
+html[data-rfq-light] .bprv{
+  background:#fffdf8!important;color:#8a6408!important;border-color:rgba(163,120,19,.35)!important;
+}
+
+/* ---------- الأذكار (داخل الصفحة الرئيسية) ---------- */
+html[data-rafiq-theme="light"] #athOvS,
+html[data-rafiq-theme="light"] #athOvM,
+html[data-rafiq-theme="light"] #athOvN{background:#fbf7ef!important}
+html[data-rafiq-theme="light"] #athOvS > div:first-child,
+html[data-rafiq-theme="light"] #athOvM > div:first-child,
+html[data-rafiq-theme="light"] #athOvN > div:first-child{
+  background:rgba(255,253,248,.97)!important;
+  border-bottom:1px solid rgba(163,120,19,.25)!important;
+}
+html[data-rafiq-theme="light"] #athOvS > div:first-child span,
+html[data-rafiq-theme="light"] #athOvM > div:first-child span,
+html[data-rafiq-theme="light"] #athOvN > div:first-child span{color:#8a6408!important}
+html[data-rafiq-theme="light"] #athSCont > div,
+html[data-rafiq-theme="light"] #athMCont > div,
+html[data-rafiq-theme="light"] #athNCont > div{color:#2b2115!important}
+html[data-rafiq-theme="light"] .ath-pagebar{background:rgba(255,253,248,.97)!important;border-top:1px solid rgba(163,120,19,.22)!important}
+html[data-rafiq-theme="light"] .ath-pagebar button{color:#3a2f1e!important;border-color:rgba(163,120,19,.25)!important;background:#fffdf8!important}
+html[data-rafiq-theme="light"] #athSInd,
+html[data-rafiq-theme="light"] #athMInd,
+html[data-rafiq-theme="light"] #athNInd{color:#8a6408!important}
+
+/* ---------- تفاصيل مشتركة (أزرار أيقونية، نصوص خيارات، طبقات) ---------- */
+html[data-rfq-light] option,
+html[data-rfq-light] optgroup{background:#fffdf8!important;color:#2b2115!important}
+html[data-rfq-light] .btn-icon,
+html[data-rfq-light] .mp-btn,
+html[data-rfq-light] .tafseer-btn,
+html[data-rfq-light] .qf-favorite-btn,
+html[data-rfq-light] .icon-btn,
+html[data-rfq-light] .sb-font-btn,
+html[data-rfq-light] .sb-icon-btn{color:#8a6408!important}
+html[data-rfq-light] .qf-favorite-btn.active{color:#b8860b!important}
+html[data-rfq-light] .page-image-area,
+html[data-rfq-light] .mushaf-page{background:#fffdf8!important}
+html[data-rfq-light] .dl-overlay,
+html[data-rfq-light] .tafseer-overlay,
+html[data-rfq-light] .overlay,
+html[data-rfq-light] .modal-backdrop{background:rgba(251,247,239,.95)!important;color:#2b2115!important}
+html[data-rfq-light] .dl-overlay .dl-body,
+html[data-rfq-light] .tafseer-overlay .tafseer-body{background:#fffdf8!important;color:#2b2115!important}
+html[data-rfq-light] .surah-item,
+html[data-rfq-light] .ayah-item,
+html[data-rfq-light] .result-item{color:#2b2115!important;border-color:rgba(163,120,19,.18)!important}
+html[data-rfq-light] .surah-item:nth-child(even){background:rgba(201,162,39,.05)!important}
+html[data-rfq-light] .surah-item:hover{background:rgba(201,162,39,.12)!important}
+html[data-rfq-light] .sb-tabs .sb-tab,
+html[data-rfq-light] .sb-tab{color:#5d4c33!important}
+html[data-rfq-light] .sb-tab.active{color:#0f5d43!important;border-color:var(--gold,#a37813)!important}
+html[data-rfq-light] .hadith,
+html[data-rfq-light] .sb-reader p{color:#2b2115!important}
+html[data-rfq-light] .sb-reader{background:#fffdf8!important}
+
+/* ---------- المسلم الصغير ---------- */
+html[data-rfq-light] .scr,
+html[data-rfq-light] .cvr-hero-frame,
+html[data-rfq-light] .msq-realphoto-modal,
+html[data-rfq-light] .qz-box,
+html[data-rfq-light] .kg-box{
+  background:linear-gradient(160deg,#fffdf8,#f8f0de)!important;
+  border-color:rgba(163,120,19,.26)!important;
+  color:#2b2115!important;
+}
+html[data-rfq-light] nav{background:rgba(255,253,248,.97)!important;border-color:rgba(163,120,19,.22)!important}
+html[data-rfq-light] nav *{color:#7b6a4f!important}
+html[data-rfq-light] nav .active,html[data-rfq-light] nav .on{color:#0f5d43!important}
+html[data-rfq-light] .gm-badge{color:#8a6408!important;background:rgba(201,162,39,.16)!important}
+html[data-rfq-light] .msq-act-btn{color:#0f5d43!important}
+html[data-rfq-light] .qz-q-text{color:#2b2115!important}
+html[data-rfq-light] .kg-reward-text{color:#8a6408!important}
+html[data-rfq-light] input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]){
+  background:#fffdf8!important;color:#2b2115!important;border-color:rgba(163,120,19,.28)!important;
+}
+
+/* ---------- حياة الصحابة (تفاصيل) ---------- */
+html[data-rfq-light] .sb-story-title{
+  color:#0f5d43!important;background:none!important;-webkit-text-fill-color:#0f5d43!important;
+}
+html[data-rfq-light] .sb-reader-topbar,
+html[data-rfq-light] .sb-reader-tools,
+html[data-rfq-light] .sb-reader-footer{
+  background:rgba(255,253,248,.97)!important;border-color:rgba(163,120,19,.22)!important;color:#2b2115!important;
+}
+html[data-rfq-light] .sb-search-input{
+  background:#fffdf8!important;color:#2b2115!important;border-color:rgba(163,120,19,.25)!important;
+}
+html[data-rfq-light] .sb-hero-ayah,
+html[data-rfq-light] .sb-featured-preview,
+html[data-rfq-light] .sb-reader p,
+html[data-rfq-light] .sb-reader li{color:#3a2f1e!important}
+html[data-rfq-light] .sb-nav-btn,
+html[data-rfq-light] .sb-reader-back{
+  color:#8a6408!important;background:#fffdf8!important;border:1px solid rgba(163,120,19,.35)!important;
+}
+html[data-rfq-light] .sb-story-card,
+html[data-rfq-light] .sb-story{background:rgba(255,255,255,.9)!important;border-color:rgba(163,120,19,.2)!important}
+html[data-rfq-light] .sb-era-badge,
+html[data-rfq-light] .sb-day-badge{background:rgba(201,162,39,.16)!important;color:#8a6408!important}
+
+/* ---------- المسابقة (تفاصيل) ---------- */
+html[data-rfq-light] .wrap b,
+html[data-rfq-light] .wrap strong{color:#8a6408!important}
+html[data-rfq-light] .wrap .sec{color:#8a6408!important}
+html[data-rfq-light] .wrap p,
+html[data-rfq-light] .wrap .log,
+html[data-rfq-light] .wrap .hint{color:#5d4c33!important}
+html[data-rfq-light] .btn{color:#2b2115!important}
+html[data-rfq-light] .btn.gold,
+html[data-rfq-light] .btn.green,
+html[data-rfq-light] .btn.primary{color:#fffdf8!important}
+html[data-rfq-light] .btn.gold{background:linear-gradient(135deg,#c9a227,#e0b543)!important;border-color:transparent!important}
+html[data-rfq-light] .btn.green{background:linear-gradient(135deg,#0f7d5b,#12a074)!important;border-color:transparent!important}
+html[data-rfq-light] .wrap .top{background:transparent!important}
+html[data-rfq-light] .wrap .brand h1{color:#0f5d43!important}
+
+/* ============================================================
+   الوضع النهاري — تصحيح التباين في حياة الصحابة والقرآن
+   ============================================================ */
+html[data-rfq-light] .sb-stats,
+html[data-rfq-light] .sb-quick-tools,
+html[data-rfq-light] .sb-search-wrap,
+html[data-rfq-light] .sb-list{
+  background:transparent!important;border-color:rgba(163,120,19,.16)!important;
+}
+html[data-rfq-light] .sb-tabs{background:rgba(243,233,209,.72)!important}
+html[data-rfq-light] .sb-stat-card{
+  background:linear-gradient(135deg,#fffdf8,#faf2e0)!important;
+  border-color:rgba(163,120,19,.22)!important;box-shadow:0 4px 14px rgba(120,88,23,.07)!important;
+}
+html[data-rfq-light] .sb-stat-label{color:#6b5a3e!important}
+html[data-rfq-light] .sb-stat-num.green{color:#0f7d5b!important}
+html[data-rfq-light] .sb-stat-num.gold{color:#8a6408!important}
+html[data-rfq-light] .sb-stat-num.blue{color:#1d5fb8!important}
+html[data-rfq-light] .sb-stat-num.purple{color:#6b3fa0!important}
+html[data-rfq-light] .sb-tool-btn{
+  background:linear-gradient(135deg,rgba(201,162,39,.16),rgba(201,162,39,.06))!important;
+  border-color:rgba(163,120,19,.30)!important;color:#7d5a12!important;
+}
+html[data-rfq-light] .sb-tool-btn.green{background:linear-gradient(135deg,rgba(15,125,91,.14),rgba(15,125,91,.05))!important;border-color:rgba(15,125,91,.28)!important;color:#0f6b4f!important}
+html[data-rfq-light] .sb-tool-btn.blue{background:linear-gradient(135deg,rgba(29,95,184,.13),rgba(29,95,184,.05))!important;border-color:rgba(29,95,184,.26)!important;color:#1d5fb8!important}
+html[data-rfq-light] .sb-story-item{
+  background:linear-gradient(135deg,#fffdf8,#faf2e0)!important;
+  border-color:rgba(163,120,19,.20)!important;
+}
+html[data-rfq-light] .sb-story-item:hover{background:linear-gradient(135deg,#fffdf8,#f3e7cb)!important;border-color:rgba(15,125,91,.30)!important}
+html[data-rfq-light] .sb-story-item.read{border-color:rgba(15,125,91,.30)!important;background:linear-gradient(135deg,#fffdf8,#eef6ef)!important}
+html[data-rfq-light] .sb-story-item.today{border-color:rgba(15,125,91,.55)!important;background:linear-gradient(135deg,#fffdf8,#e9f5ee)!important}
+html[data-rfq-light] .sb-story-num{background:rgba(201,162,39,.10)!important;border-color:rgba(163,120,19,.16)!important}
+html[data-rfq-light] .sb-story-num-inner{color:#8a6408!important}
+html[data-rfq-light] .sb-story-num-label{color:#a37813!important}
+html[data-rfq-light] .sb-story-sub{color:#7b6a4f!important}
+html[data-rfq-light] .sb-prog-bar{background:rgba(163,120,19,.16)!important}
+html[data-rfq-light] .sb-prog-pts{color:#0f6b4f!important}
+html[data-rfq-light] .sb-featured{background:linear-gradient(135deg,rgba(201,162,39,.14),rgba(15,125,91,.06))!important;border-color:rgba(163,120,19,.28)!important}
+html[data-rfq-light] .sb-featured-sub{color:#7b6a4f!important}
+html[data-rfq-light] .sb-featured-preview{color:#5d4c33!important}
+html[data-rfq-light] .sb-story-status.unread{background:rgba(201,162,39,.14)!important;color:#7d5a12!important;border-color:rgba(163,120,19,.30)!important}
+html[data-rfq-light] .sb-story-status.done{background:rgba(15,125,91,.12)!important;color:#0f6b4f!important;border-color:rgba(15,125,91,.30)!important}
+html[data-rfq-light] .sb-reader-back,
+html[data-rfq-light] .sb-nav-btn{background:#fffdf8!important;color:#7d5a12!important;border:1px solid rgba(163,120,19,.32)!important}
+html[data-rfq-light] .sb-read-btn.unread{background:rgba(15,125,91,.12)!important;border-color:rgba(15,125,91,.35)!important;color:#0f6b4f!important}
+html[data-rfq-light] .sb-read-btn.done{background:linear-gradient(135deg,rgba(15,125,91,.20),rgba(15,125,91,.10))!important;color:#0b5b42!important;border-color:rgba(15,125,91,.5)!important}
+html[data-rfq-light] .sb-reader-tools{color:#7b6a4f!important}
+html[data-rfq-light] .sb-page-title{color:#2b2115!important}
+html[data-rfq-light] .sb-page-subtitle{color:#0f6b4f!important}
+html[data-rfq-light] .sb-page-num{color:#7b6a4f!important}
+html[data-rfq-light] .sb-page-num-badge{background:rgba(201,162,39,.16)!important;border-color:rgba(163,120,19,.30)!important;color:#7d5a12!important}
+html[data-rfq-light] .sb-page-header{background:linear-gradient(135deg,rgba(15,125,91,.08),rgba(201,162,39,.07))!important;border-color:rgba(163,120,19,.20)!important}
+html[data-rfq-light] .sb-reader-body{background:linear-gradient(180deg,rgba(250,242,224,.55),#fbf7ef)!important}
+html[data-rfq-light] .sb-reader-body .hadith{background:rgba(201,162,39,.12)!important;color:#6b4f10!important;border-right-color:#c9a227!important}
+html[data-rfq-light] .sb-reader-body .verse{background:rgba(29,95,184,.07)!important;color:#1e3a8a!important;border-right-color:#4f74c8!important}
+html[data-rfq-light] .sb-reference-section{background:rgba(255,255,255,.92)!important;border-color:rgba(163,120,19,.20)!important}
+html[data-rfq-light] .sb-lessons{background:linear-gradient(135deg,rgba(201,162,39,.10),rgba(255,255,255,.9))!important}
+html[data-rfq-light] .sb-source-item{background:#fffdf8!important;border-color:rgba(163,120,19,.18)!important}
+html[data-rfq-light] .sb-source-text{color:#3a2f1e!important}
+html[data-rfq-light] .sb-lessons .sb-source-text{color:#6b4f10!important}
+html[data-rfq-light] .sb-lessons .sb-section-header-title{color:#8a6408!important}
+html[data-rfq-light] .sb-takhreej .sb-section-header-title{color:#6b3fa0!important}
+html[data-rfq-light] .sb-takhreej-text{color:#4c2c74!important}
+html[data-rfq-light] .sb-takhreej-source{color:#6b5a3e!important}
+html[data-rfq-light] .sb-section-header-sub{color:#7b6a4f!important}
+html[data-rfq-light] .sb-era-badge{background:rgba(90,90,190,.10)!important;color:#3f3f8f!important;border-color:rgba(90,90,190,.28)!important}
+html[data-rfq-light] .sb-search-count{color:#6b5a3e!important}
+html[data-rfq-light] .sb-search-clear{background:#fffdf8!important;color:#8a7758!important;border-color:rgba(163,120,19,.25)!important}
+html[data-rfq-light] .sb-celebrate{background:linear-gradient(135deg,rgba(15,125,91,.96),rgba(11,101,73,.97))!important}
+html[data-rfq-light] .sb-no-results-text{color:#5d4c33!important}
+html[data-rfq-light] .sb-no-results-sub{color:#8a7758!important}
+html[data-rfq-light] .sb-font-btn{background:#fffdf8!important;color:#7b6a4f!important;border-color:rgba(163,120,19,.22)!important}
+html[data-rfq-light] .sb-font-btn.active{background:rgba(15,125,91,.14)!important;color:#0f6b4f!important;border-color:rgba(15,125,91,.40)!important}
+html[data-rfq-light] .sb-bookmark-reader{background:rgba(201,162,39,.12)!important;border-color:rgba(163,120,19,.30)!important;color:#7d5a12!important}
+html[data-rfq-light] .sb-bookmark{background:#fffdf8!important;border-color:rgba(163,120,19,.22)!important;color:#8a7758!important}
+html[data-rfq-light] .sb-bookmark.active{background:rgba(201,162,39,.20)!important;border-color:rgba(163,120,19,.5)!important;color:#8a6408!important}
+html[data-rfq-light] .sb-hero-sub{color:#8a6408!important}
+html[data-rfq-light] .sb-hero-count{background:rgba(15,125,91,.10)!important;border-color:rgba(15,125,91,.28)!important;color:#0f6b4f!important}
+html[data-rfq-light] .sb-trusted-badge{background:linear-gradient(135deg,rgba(15,125,91,.12),rgba(15,125,91,.05))!important;border-color:rgba(15,125,91,.30)!important;color:#0f6b4f!important}
+html[data-rfq-light] .sb-day-badge{background:rgba(15,125,91,.10)!important;border-color:rgba(15,125,91,.30)!important;color:#0f6b4f!important}
+
+/* أسماء السور وبطاقات القوائم → ذهبي أغمق للقراءة */
+html[data-rfq-light] .item-card b{color:#7d5a12!important}
+html[data-rfq-light] .item-card{background:rgba(255,255,255,.90)!important;border-color:rgba(163,120,19,.20)!important}
+
+/* مسار التنقل (breadcrumb) — تباين واضح */
+html[data-rfq-light] .sb-crumb{background:linear-gradient(135deg,#fffdf8,#f6ecd2)!important;border-bottom:1px solid rgba(163,120,19,.26)!important}
+html[data-rfq-light] .sb-crumb-reader{background:transparent!important;border:0!important}
+html[data-rfq-light] .sb-crumb button,
+html[data-rfq-light] .sb-crumb a{
+  color:#5d4a1c!important;background:rgba(201,162,39,.14)!important;
+  border:1px solid rgba(163,120,19,.34)!important;
+}
+html[data-rfq-light] .sb-crumb button:hover,
+html[data-rfq-light] .sb-crumb a:hover{background:rgba(201,162,39,.26)!important;color:#3f3110!important}
+html[data-rfq-light] .sb-crumb .sb-cur{color:#8a6408!important;font-weight:900}
+html[data-rfq-light] .sb-crumb .sb-sep{color:#a3906a!important}
+
+/* ---------- المسابقة: نصوص ونماذج باهتة في الوضع النهاري ---------- */
+html[data-rfq-light] .wrap .top,
+html[data-rfq-light] .wrap .top *{color:#6b5a3e!important}
+html[data-rfq-light] .wrap .top a,
+html[data-rfq-light] .wrap .top .back{color:#7d5a12!important}
+html[data-rfq-light] .wrap h1{color:#0f5d43!important}
+html[data-rfq-light] .wrap .card label,
+html[data-rfq-light] .wrap .fl label,
+html[data-rfq-light] .wrap label{color:#4a3f2c!important}
+html[data-rfq-light] .wrap .card h1,
+html[data-rfq-light] .wrap .card h2,
+html[data-rfq-light] .wrap .card h3{color:#8a6408!important}
+html[data-rfq-light] .wrap .tabs button:not(.on),
+html[data-rfq-light] .wrap .tabs .tab:not(.on){
+  background:#fffdf8!important;color:#5d4c33!important;border-color:rgba(163,120,19,.28)!important;
+}
+html[data-rfq-light] .wrap .tabs button.on,
+html[data-rfq-light] .wrap .tabs .tab.on{
+  background:linear-gradient(135deg,#c9a227,#e0b543)!important;color:#2b2115!important;border-color:transparent!important;
+}
+html[data-rfq-light] .wrap .note,
+html[data-rfq-light] .wrap .foot,
+html[data-rfq-light] .wrap small{color:#6b5a3e!important}
+html[data-rfq-light] .wrap input{background:#fffdf8!important;color:#2b2115!important;border-color:rgba(163,120,19,.30)!important}
+html[data-rfq-light] .wrap input::placeholder{color:#a3957c!important}
+html[data-rfq-light] .wrap .placeholder,
+html[data-rfq-light] .wrap .hint{color:#8a7758!important}
+html[data-rfq-light] .board .row,
+html[data-rfq-light] .board .name{color:#3a2f1e!important}
