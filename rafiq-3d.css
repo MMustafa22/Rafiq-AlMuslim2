@@ -1,0 +1,97 @@
+/* ============================================================
+   رفيق المسلم — وضع المظهر ثلاثي الأبعاد (3D)
+   يعمل بإضافة data-rafiq-3d="on" على <html>. بإيقافه يرجع كل شيء كما كان.
+   ============================================================ */
+html[data-rafiq-3d="on"]{
+  --r3d-edge:#7a5a12;            /* لون سُمك الزر (الحافة السفلية) — ليلي */
+  --r3d-edge2:#5c430c;
+  --r3d-hi:rgba(255,236,170,.38);/* لمعة الحافة العلوية */
+  --r3d-drop:rgba(0,0,0,.45);    /* ظل السقوط */
+  --r3d-card-hi:rgba(255,255,255,.10);
+  --r3d-card-edge:rgba(0,0,0,.55);
+}
+html[data-rafiq-3d="on"][data-rafiq-theme="light"],
+html[data-rafiq-3d="on"][data-rfq-light="1"]{
+  --r3d-edge:#b48a22;
+  --r3d-edge2:#8f6a12;
+  --r3d-hi:rgba(255,255,255,.95);
+  --r3d-drop:rgba(120,88,23,.38);
+  --r3d-card-hi:rgba(255,255,255,.9);
+  --r3d-card-edge:rgba(163,120,19,.28);
+}
+
+/* ---------- الأزرار: حافة سميكة + لمعة + ضغطة حقيقية ---------- */
+html[data-rafiq-3d="on"] :is(button,.btn,.btn-home,.btn-icon,.btn-nav,.nav-btn,.rs-btn,.hub-btn,.tab-btn,.share-btn,.suc-btn,.backup-btn,.rm-btn,.rn-btn,.rn-m-btn,.rn-hd-btn,.mp-btn,.sb-tool-btn,.sb-read-btn,.book-nav-btn,.sb-nav-btn,.prayer-times-btn,.tasbih-play-btn,.tasbih-sound-btn,.tasbih-speed-btn,.tasbih-reset-btn,.tasbih-clear-btn,.tafseer-btn,.dl-chip,.qf-chip,.cls-btn,.ed-btn,.theme-btn,.nav-pill,.rep-tab,.athkar-book-tab,.sb-tab,.rm-update-btn):not(.r3d-off):not(.rfq-morph):not(.qf-favorite-btn):not(.tafseer-close-btn):not(.search-clear-btn):not([class*="close"]):not([role="switch"]){
+  transform:translateY(0) translateZ(0);
+  transition:transform .12s ease,box-shadow .12s ease,filter .2s ease!important;
+  box-shadow:
+    inset 0 1.5px 0 var(--r3d-hi),
+    inset 0 -2px 3px rgba(0,0,0,.18),
+    0 1px 0 var(--r3d-edge),
+    0 2px 0 var(--r3d-edge),
+    0 3px 0 var(--r3d-edge2),
+    0 4px 0 var(--r3d-edge2),
+    0 9px 14px var(--r3d-drop)!important;
+}
+html[data-rafiq-3d="on"] :is(button,.btn,.btn-home,.btn-icon,.btn-nav,.nav-btn,.rs-btn,.hub-btn,.tab-btn,.share-btn,.suc-btn,.backup-btn,.rm-btn,.rn-btn,.rn-m-btn,.rn-hd-btn,.mp-btn,.sb-tool-btn,.sb-read-btn,.book-nav-btn,.sb-nav-btn,.prayer-times-btn,.tasbih-play-btn,.tasbih-sound-btn,.tasbih-speed-btn,.tasbih-reset-btn,.tasbih-clear-btn,.tafseer-btn,.dl-chip,.qf-chip,.cls-btn,.ed-btn,.theme-btn,.nav-pill,.rep-tab,.athkar-book-tab,.sb-tab,.rm-update-btn):not(.r3d-off):not(.rfq-morph):not(.qf-favorite-btn):not(.tafseer-close-btn):not(.search-clear-btn):not([class*="close"]):not([role="switch"]):active{
+  transform:translateY(3px) translateZ(0);
+  box-shadow:
+    inset 0 2px 5px rgba(0,0,0,.28),
+    0 1px 0 var(--r3d-edge2),
+    0 2px 4px var(--r3d-drop)!important;
+}
+
+/* ---------- البطاقات والمربعات: ارتفاع وعمق ---------- */
+html[data-rafiq-3d="on"] :is(.home-tile,.item-card,.lib-card,.ach-card,.rd-card,.rn-card,.day-card,.task-item,.dmc-item,.scr-card,.tasks-card,.rm-prayer-card,.rm-location-card,.rm-info-card,.zk-card,.res-card,.pcard,.report-sum-card,.tasbih-card,.sb-story-item,.surah-item,.sp-item,.abx-card,.rs-sec,.analysis-item,.d-item,.ath-reciter-item,.mushaf-card){
+  transform-style:preserve-3d;
+  will-change:transform;
+  transition:transform .18s ease,box-shadow .18s ease!important;
+  box-shadow:
+    inset 0 1.5px 0 var(--r3d-card-hi),
+    inset 0 -2px 0 var(--r3d-card-edge),
+    0 2px 0 var(--r3d-card-edge),
+    0 14px 26px -6px var(--r3d-drop),
+    0 4px 8px rgba(0,0,0,.14)!important;
+}
+html[data-rafiq-3d="on"] :is(.home-tile,.item-card,.lib-card,.ach-card,.rd-card,.rn-card,.day-card,.task-item,.dmc-item,.scr-card,.rm-prayer-card,.zk-card,.res-card,.pcard,.tasbih-card,.surah-item,.sp-item,.mushaf-card):active{
+  transform:translateY(2px) scale(.985);
+  box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 3px 8px var(--r3d-drop)!important;
+}
+
+/* ---------- دائرة العدّاد: كرة بارزة ---------- */
+html[data-rafiq-3d="on"] .dhikr-counter-btn{
+  filter:drop-shadow(0 6px 7px var(--r3d-drop));
+  transition:transform .12s ease,filter .12s ease;
+}
+html[data-rafiq-3d="on"] .dhikr-counter-btn:active{transform:translateY(2px) scale(.96);filter:drop-shadow(0 2px 3px var(--r3d-drop))}
+html[data-rafiq-3d="on"] .dhikr-counter-btn .ring-inner{
+  box-shadow:inset 0 3px 6px var(--r3d-hi),inset 0 -5px 8px rgba(0,0,0,.25)!important;
+}
+
+/* ---------- الشريط السفلي والعناوين ---------- */
+html[data-rafiq-3d="on"] :is(.bottom-nav,.nav-bar,#navBar,.nav-actions){
+  box-shadow:0 -6px 18px var(--r3d-drop),inset 0 1.5px 0 var(--r3d-card-hi)!important;
+}
+/* الكتابة تبقى عادية وواضحة — بدون ظل مجسّم للنصوص */
+html[data-rafiq-3d="on"] :is(h1,h2,h3,.abx-card-hd h2){text-shadow:none!important}
+html[data-rafiq-3d="on"] :is(.mushaf-page-img,.dl-panel){
+  box-shadow:0 18px 40px -8px var(--r3d-drop);
+}
+
+/* ---------- إمالة البطاقات (تتحكم بها rafiq-3d.js) ---------- */
+html[data-rafiq-3d="on"] .r3d-tilt{
+  transform:perspective(700px) rotateX(var(--r3d-rx,0deg)) rotateY(var(--r3d-ry,0deg)) translateZ(0);
+}
+
+/* ---------- زر التبديل في الإعدادات ---------- */
+.r3d-row{display:flex;align-items:center;gap:14px;padding:12px 2px 4px;margin-top:10px;border-top:1px dashed rgba(212,168,71,.25)}
+.r3d-row .r3d-cube{width:44px;height:44px;flex:0 0 44px;display:grid;place-items:center;font-size:1.5rem;border-radius:12px;background:linear-gradient(145deg,#d4a847,#9a7420);color:#fff;box-shadow:0 3px 0 #6f5214,0 7px 10px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.5)}
+.r3d-row .r3d-txt{flex:1;min-width:0}
+.r3d-row .r3d-txt b{display:block;font-size:.95rem;font-weight:800;margin-bottom:2px}
+.r3d-row .r3d-txt span{display:block;font-size:.78rem;opacity:.8;line-height:1.5}
+html[data-rafiq-3d="on"] .r3d-row .r3d-cube{transform:rotate(-6deg) translateY(-1px)}
+
+@media (prefers-reduced-motion:reduce){
+  html[data-rafiq-3d="on"] *{transition-duration:.01ms!important}
+  html[data-rafiq-3d="on"] .r3d-tilt{transform:none}
+}

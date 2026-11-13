@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-mode="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#080e1a">
+<title>مسابقة رفيق المسلم</title>
+<meta name="description" content="مسابقة رفيق المسلم: ترتيب شهري بالنقاط التي تجمعها من عبادتك اليومية. التسجيل بالبريد ورقم الواتساب، وبياناتك خاصة بك وحدك.">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<script>
+(function(){
+  var m='dark';
+  try{ m=localStorage.getItem('rm_theme')||'dark'; }catch(e){}
+  if(m!=='light') m='dark';
+  document.documentElement.setAttribute('data-mode',m);
+})();
+</script>
+<style>
+:root{
+  --bg:#070d18;--bg2:#0b1424;--paper:#101b2d;--paper2:#0d1727;--ink:#eef4fb;--soft:#b9c8d8;--mute:#8395a8;
+  --gold:#e7c46a;--gold2:#f7dfa2;--emerald:#34d399;--emerald2:#10b981;--indigo:#a5b4fc;
+  --line:rgba(231,196,106,.22);--line-soft:rgba(255,255,255,.08);
+  --shadow:0 18px 50px -28px rgba(0,0,0,.9);
+}
+html[data-mode="light"]{
+  --bg:#fbf7ef;--bg2:#f4ecdc;--paper:#fffdf8;--paper2:#f9f3e6;--ink:#2b2115;--soft:#5d4c33;--mute:#8a7758;
+  --gold:#a37813;--gold2:#c9a227;--emerald:#0f7a58;--emerald2:#12946b;--indigo:#4f46e5;
+  --line:rgba(163,120,19,.24);--line-soft:rgba(43,33,21,.08);--shadow:0 18px 40px -26px rgba(120,88,23,.35);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{min-height:100%}
+body{
+  font-family:Tajawal,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.75;
+  background-image:radial-gradient(900px 460px at 12% -12%,rgba(231,196,106,.16),transparent 62%),radial-gradient(720px 420px at 92% 0%,rgba(52,211,153,.12),transparent 60%);
+  background-attachment:fixed;-webkit-tap-highlight-color:transparent;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.35;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'><g fill='none' stroke='%23e7c46a' stroke-opacity='.10' stroke-width='1.1'><path d='M70 8 L132 70 L70 132 L8 70 Z'/><circle cx='70' cy='70' r='20'/></g></svg>");background-size:140px 140px}
+button,input,select{font-family:inherit}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer;border:0;background:none;color:inherit}
+
+header.top{position:sticky;top:0;z-index:40;display:flex;align-items:center;gap:8px;padding:10px 14px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line-soft)}
+.hbtn{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 12px;border-radius:12px;border:1px solid var(--line-soft);background:var(--paper);color:var(--soft);font-size:.78rem;font-weight:700;transition:.2s}
+.hbtn:hover{border-color:var(--gold);color:var(--gold)}
+.hbtn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.2}
+.brand{flex:1;display:flex;align-items:center;justify-content:center;gap:9px;min-width:0}
+.brand .logo{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;font-size:1.05rem;background:linear-gradient(140deg,var(--gold),#a37813);color:#231a06;flex:none;box-shadow:0 6px 18px -8px rgba(231,196,106,.8)}
+.brand b{font-size:.98rem;font-weight:900;color:var(--gold);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand span{display:block;font-size:.6rem;color:var(--mute);line-height:1.2}
+
+.wrap{position:relative;z-index:1;max-width:1000px;margin:0 auto;padding:18px 14px 70px}
+.hero{text-align:center;padding:22px 16px 18px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(160deg,color-mix(in srgb,var(--paper) 88%,transparent),color-mix(in srgb,var(--paper2) 92%,transparent));box-shadow:var(--shadow);margin-bottom:14px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:7px;border:1px solid var(--line-soft);border-radius:16px;pointer-events:none}
+.hero .orn{color:var(--gold);letter-spacing:7px;font-size:.8rem;opacity:.85}
+.hero h1{font-size:clamp(1.35rem,4.6vw,2rem);font-weight:900;color:var(--gold2);margin:4px 0 2px}
+html[data-mode="light"] .hero h1{color:var(--gold)}
+.hero p{font-size:.83rem;color:var(--soft);max-width:620px;margin:0 auto}
+.hero .pill{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:5px 13px;border-radius:999px;border:1px solid var(--line);background:rgba(231,196,106,.1);font-size:.72rem;font-weight:800;color:var(--gold)}
+
+.card{background:var(--paper);border:1px solid var(--line-soft);border-radius:18px;padding:16px;box-shadow:var(--shadow);margin-bottom:14px}
+.card > h2{display:flex;align-items:center;gap:8px;font-size:1.02rem;font-weight:900;color:var(--ink);margin-bottom:4px}
+.card .sub{font-size:.76rem;color:var(--mute);margin-bottom:12px;line-height:1.8}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;gap:4px;background:var(--bg2);border:1px solid var(--line-soft);border-radius:14px;padding:4px;margin-bottom:14px}
+.tabs button{padding:9px;border-radius:11px;font-size:.84rem;font-weight:800;color:var(--mute);transition:.2s}
+.tabs button.on{background:linear-gradient(140deg,var(--gold),#b8902a);color:#241a05;box-shadow:0 8px 20px -14px rgba(231,196,106,.9)}
+html[data-mode="light"] .tabs button.on{color:#fffdf5}
+
+label{display:block;font-size:.76rem;font-weight:700;color:var(--soft);margin:10px 0 4px}
+input,select{width:100%;padding:11px 13px;border-radius:12px;border:1px solid var(--line-soft);background:var(--bg2);color:var(--ink);font-size:.88rem;outline:none;transition:.2s}
+input:focus,select:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(231,196,106,.14)}
+input::placeholder{color:var(--mute);opacity:.75}
+input[dir="ltr"]{direction:ltr;text-align:left}
+.row{display:flex;gap:8px}
+.row > *{min-width:0}
+.phone-row{display:grid;grid-template-columns:132px 1fr;gap:8px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 18px;border-radius:12px;font-size:.85rem;font-weight:800;border:1px solid transparent;transition:.2s;width:100%}
+.btn.primary{background:linear-gradient(135deg,var(--emerald2),var(--emerald));color:#04150f;box-shadow:0 12px 26px -16px rgba(16,185,129,.9)}
+html[data-mode="light"] .btn.primary{color:#fff}
+.btn.gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241a05;box-shadow:0 12px 26px -16px rgba(231,196,106,.9)}
+.btn.ghost{border-color:var(--line);color:var(--gold);background:transparent}
+.btn.soft{background:var(--bg2);border-color:var(--line-soft);color:var(--soft)}
+.btn.danger{border-color:rgba(248,113,113,.4);color:#f87171;background:rgba(248,113,113,.08)}
+.btn.mini{padding:8px 12px;font-size:.76rem;width:auto;border-radius:10px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn:active{transform:scale(.985)}
+.btn svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+.grid-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+@media(max-width:520px){.grid-actions{grid-template-columns:1fr}}
+
+.msg{margin-top:10px;padding:9px 12px;border-radius:11px;font-size:.79rem;display:none;line-height:1.7}
+.msg.show{display:block}
+.msg.err{background:rgba(248,113,113,.12);border:1px solid rgba(248,113,113,.4);color:#fca5a5}
+.msg.ok{background:rgba(52,211,153,.12);border:1px solid rgba(52,211,153,.4);color:#a7f3d0}
+html[data-mode="light"] .msg.err{color:#b91c1c}
+html[data-mode="light"] .msg.ok{color:#065f46}
+.note{font-size:.72rem;color:var(--mute);line-height:1.9;margin-top:10px}
+.note b{color:var(--gold)}
+
+.who{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.avatar{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.15rem;font-weight:900;background:linear-gradient(140deg,rgba(231,196,106,.24),rgba(52,211,153,.2));border:1px solid var(--line);color:var(--gold);flex:none}
+.who .nm{font-size:1.1rem;font-weight:900;line-height:1.4}
+.who .meta{font-size:.72rem;color:var(--mute)}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:999px;font-size:.64rem;font-weight:800;background:rgba(52,211,153,.14);border:1px solid rgba(52,211,153,.35);color:var(--emerald)}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:13px}
+.kpi{background:var(--bg2);border:1px solid var(--line-soft);border-radius:14px;padding:10px 6px;text-align:center}
+.kpi b{display:block;font-size:1.25rem;font-weight:900;color:var(--gold);line-height:1.35}
+.kpi span{font-size:.66rem;color:var(--mute)}
+@media(max-width:520px){.kpis{grid-template-columns:repeat(2,1fr)}}
+
+.parts{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line-soft)}
+.part{text-align:center;background:var(--bg2);border:1px solid var(--line-soft);border-radius:11px;padding:7px 4px}
+.part b{display:block;font-size:.92rem;font-weight:900;color:var(--emerald)}
+.part span{font-size:.6rem;color:var(--mute)}
+@media(max-width:560px){.parts{grid-template-columns:repeat(3,1fr)}}
+
+.months{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:thin}
+.mchip{flex:0 0 auto;padding:7px 13px;border-radius:999px;border:1px solid var(--line-soft);background:var(--bg2);font-size:.72rem;font-weight:700;color:var(--soft);white-space:nowrap;transition:.2s}
+.mchip:hover{border-color:var(--gold);color:var(--gold)}
+.mchip.on{background:linear-gradient(135deg,var(--emerald2),var(--emerald));color:#04150f;border-color:transparent;font-weight:900}
+html[data-mode="light"] .mchip.on{color:#fff}
+
+.podium{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:8px;align-items:end;margin-bottom:12px}
+.pod{border-radius:16px;padding:12px 8px;text-align:center;border:1px solid var(--line-soft);background:var(--bg2);position:relative}
+.pod .medal{font-size:1.5rem;line-height:1.2}
+.pod .nm{font-size:.78rem;font-weight:800;margin:2px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.pod .pt{font-size:.78rem;font-weight:900;color:var(--gold)}
+.pod .dys{font-size:.62rem;color:var(--mute)}
+.pod.first{border-color:var(--gold);background:linear-gradient(170deg,rgba(231,196,106,.2),var(--bg2));transform:translateY(-6px);box-shadow:0 14px 30px -22px rgba(231,196,106,.9)}
+
+.search{position:relative;margin-bottom:8px}
+.search input{padding-inline-start:34px}
+.search svg{position:absolute;inset-inline-start:11px;top:50%;transform:translateY(-50%);width:15px;height:15px;stroke:var(--mute);fill:none;stroke-width:2.2}
+.rows{max-height:440px;overflow-y:auto;overscroll-behavior:contain}
+.rank-row{display:flex;align-items:center;gap:9px;padding:9px 10px;border-radius:11px;border:1px solid transparent;transition:.15s}
+.rank-row:nth-child(odd){background:rgba(231,196,106,.045)}
+.rank-row:hover{background:rgba(231,196,106,.1);border-color:var(--line-soft)}
+.rank-row.me{background:linear-gradient(90deg,rgba(52,211,153,.16),rgba(231,196,106,.1));border-color:rgba(52,211,153,.35)}
+.rk{flex:0 0 30px;height:27px;border-radius:9px;display:grid;place-items:center;background:var(--bg2);color:var(--gold);font-weight:900;font-size:.72rem}
+.rk.top{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#241a05}
+.rank-row .nm{flex:1;font-size:.83rem;font-weight:700;min-width:0;display:flex;align-items:center;gap:6px;overflow:hidden}
+.rank-row .nm span.txt{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tag{font-size:.58rem;color:#04150f;background:var(--emerald);padding:1px 6px;border-radius:7px;font-weight:900;flex:none}
+.tag.demo{background:rgba(165,180,252,.2);color:var(--indigo);border:1px solid rgba(165,180,252,.3)}
+.rank-row .pt{font-size:.8rem;font-weight:900;color:var(--gold);flex:none}
+.rank-row .dys{flex:0 0 52px;text-align:left;font-size:.63rem;color:var(--mute)}
+@media(max-width:520px){.rank-row .dys{display:none}.pod .nm{font-size:.7rem}}
+.empty{text-align:center;color:var(--mute);font-size:.79rem;padding:20px 10px;line-height:1.9}
+
+.how{display:grid;gap:6px;margin-top:4px}
+.how-row{display:flex;align-items:center;gap:8px;font-size:.78rem;color:var(--soft);background:var(--bg2);border:1px solid var(--line-soft);border-radius:11px;padding:8px 10px}
+.how-row b{margin-inline-start:auto;color:var(--emerald);font-weight:900;font-size:.76rem;white-space:nowrap}
+.how-row .ic{font-size:.95rem}
+
+.db-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:6px 0 12px}
+.db-stat{background:var(--bg2);border:1px solid var(--line-soft);border-radius:12px;padding:9px 5px;text-align:center}
+.db-stat b{display:block;font-size:1.05rem;font-weight:900;color:var(--indigo)}
+.db-stat span{font-size:.6rem;color:var(--mute)}
+@media(max-width:520px){.db-stats{grid-template-columns:repeat(2,1fr)}}
+
+.modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:16px;background:rgba(3,7,14,.72);backdrop-filter:blur(6px)}
+.modal.show{display:flex}
+.modal-card{width:min(440px,100%);max-height:88vh;overflow:auto;background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 30px 80px -30px #000}
+.modal-card h3{font-size:1rem;font-weight:900;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:7px}
+.acc-row{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--line-soft);font-size:.8rem}
+.acc-row:last-of-type{border-bottom:0}
+.acc-row .lbl{color:var(--mute);font-size:.73rem}
+.acc-row .val{direction:ltr;font-weight:700;color:var(--ink);font-size:.78rem;display:flex;align-items:center;gap:6px}
+.eye{border:1px solid var(--line-soft);border-radius:8px;width:26px;height:26px;display:grid;place-items:center;font-size:.75rem;color:var(--mute);background:var(--bg2)}
+.close-x{position:absolute;inset-inline-end:14px}
+
+#toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,18px);z-index:200;background:var(--emerald2);color:#04150f;padding:9px 18px;border-radius:999px;font-size:.78rem;font-weight:900;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 16px 40px -20px #000;max-width:92vw;text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+.hidden{display:none!important}
+</style>
+<script src="./rafiq-3d.js"></script><script src="./rafiq-daily-notifications.js"></script>
+</head>
+<body>
+<header class="top">
+  <button class="hbtn" onclick="return goToRafiqHome()" aria-label="العودة إلى الصفحة الرئيسية">
+    <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+    <span>الرئيسية</span>
+  </button>
+  <div class="brand">
+    <div class="logo">🏆</div>
+    <div><b>مسابقة رفيق المسلم</b><span>ترتيب شهري بالنقاط — بلا أسئلة</span></div>
+  </div>
+  <button class="hbtn" id="themeBtn" onclick="toggleTheme()" aria-label="تبديل الوضع">
+    <span id="themeIco">☀️</span>
+  </button>
+</header>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="orn">✦ ❁ ✦</div>
+    <h1>مسابقتك مع نفسك… ومع إخوانك</h1>
+    <p>لا أسئلة ولا اختبارات. كل ما تسجّله في رفيق المسلم من صلوات وقرآن وأذكار وسنن وورد كتب يُترجم تلقائيًا إلى نقاط، ويظهر في ترتيب الشهر.</p>
+    <div class="pill">🗓️ <span id="hijriPill">…</span></div>
+  </section>
+
+  <!-- الدخول والتسجيل -->
+  <section class="card" id="authView">
+    <h2>🔐 الدخول إلى المسابقة</h2>
+    <div class="sub">التسجيل بالبريد الإلكتروني ورقم الواتساب. <b>بريدك ورقمك لا يظهران لأي متسابق</b> — يراهما صاحب الحساب فقط، والترتيب يعرض الاسم والنقاط.</div>
+    <div class="tabs">
+      <button type="button" id="tabLogin" class="on" onclick="setTab('login')">تسجيل الدخول</button>
+      <button type="button" id="tabReg" onclick="setTab('reg')">حساب جديد</button>
+    </div>
+
+    <div id="regFields" class="hidden">
+      <label for="rName">الاسم الذي سيظهر في الترتيب</label>
+      <input id="rName" maxlength="40" autocomplete="name" placeholder="مثال: أحمد محمد حسن">
+      <label for="rEmail">البريد الإلكتروني</label>
+      <input id="rEmail" type="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
+      <label for="rPhone">رقم الواتساب</label>
+      <div class="phone-row">
+        <select id="rCc" aria-label="مفتاح الدولة">
+          <option value="20" selected>مصر +20</option>
+          <option value="966">السعودية +966</option>
+          <option value="971">الإمارات +971</option>
+          <option value="965">الكويت +965</option>
+          <option value="974">قطر +974</option>
+          <option value="973">البحرين +973</option>
+          <option value="968">عمان +968</option>
+          <option value="962">الأردن +962</option>
+          <option value="970">فلسطين +970</option>
+          <option value="961">لبنان +961</option>
+          <option value="963">سوريا +963</option>
+          <option value="964">العراق +964</option>
+          <option value="212">المغرب +212</option>
+          <option value="216">تونس +216</option>
+          <option value="213">الجزائر +213</option>
+          <option value="218">ليبيا +218</option>
+          <option value="249">السودان +249</option>
+          <option value="967">اليمن +967</option>
+          <option value="222">موريتانيا +222</option>
+          <option value="252">الصومال +252</option>
+          <option value="90">تركيا +90</option>
+          <option value="92">باكستان +92</option>
+          <option value="62">إندونيسيا +62</option>
+          <option value="60">ماليزيا +60</option>
+          <option value="880">بنغلاديش +880</option>
+          <option value="44">بريطانيا +44</option>
+          <option value="1">أمريكا/كندا +1</option>
+          <option value="49">ألمانيا +49</option>
+          <option value="33">فرنسا +33</option>
+        </select>
+        <input id="rPhone" type="tel" inputmode="numeric" dir="ltr" maxlength="13" autocomplete="tel-national" placeholder="1012345678">
+      </div>
+      <label for="rPw">كلمة المرور (8 أحرف على الأقل)</label>
+      <input id="rPw" type="password" dir="ltr" autocomplete="new-password" placeholder="••••••••">
+      <label for="rPw2">تأكيد كلمة المرور</label>
+      <input id="rPw2" type="password" dir="ltr" autocomplete="new-password" placeholder="••••••••">
+    </div>
+
+    <div id="loginFields">
+      <label for="lEmail">البريد الإلكتروني</label>
+      <input id="lEmail" type="email" dir="ltr" autocomplete="email" placeholder="name@example.com">
+      <label for="lPw">كلمة المرور</label>
+      <input id="lPw" type="password" dir="ltr" autocomplete="current-password" placeholder="••••••••">
+    </div>
+
+    <div class="msg" id="authMsg"></div>
+    <button class="btn primary" id="authBtn" style="margin-top:14px" onclick="submitAuth()">تسجيل الدخول</button>
+    <div class="note">🔒 كلمة المرور تُخزَّن مشفّرة (PBKDF2) على جهازك، وبيانات حسابك (البريد والواتساب) لا تُعرض في لوحة الترتيب لأي أحد.</div>
+  </section>
+
+  <!-- لوحة المتسابق -->
+  <section class="card hidden" id="meView">
+    <div class="who">
+      <div class="avatar" id="meAvatar">؟</div>
+      <div style="flex:1;min-width:0">
+        <div class="nm" id="meName">—</div>
+        <div class="meta"><span class="badge">مشارك معتمد</span> <span id="meSince"></span></div>
+      </div>
+      <button class="btn mini soft" onclick="openAccount()">حسابي</button>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b id="kRank">—</b><span>ترتيبك</span></div>
+      <div class="kpi"><b id="kPts">0</b><span>نقاط الشهر</span></div>
+      <div class="kpi"><b id="kDays">0</b><span>أيام النشاط</span></div>
+      <div class="kpi"><b id="kGap">—</b><span>تفصلك عن الأول</span></div>
+    </div>
+    <div class="parts" id="meParts"></div>
+    <div class="grid-actions">
+      <button class="btn primary" onclick="syncMe(true)">🔄 مزامنة درجاتي الآن</button>
+      <button class="btn soft" onclick="exportCard()">📤 تصدير بطاقتي</button>
+    </div>
+    <div class="note" id="syncNote">تُقرأ درجاتك من سجل رفيق المسلم على هذا الجهاز وتُحفظ في قاعدة بيانات المسابقة.</div>
+  </section>
+
+  <!-- الترتيب -->
+  <section class="card">
+    <h2>🏅 ترتيب الشهر <span id="boardMonth" style="font-size:.72rem;color:var(--mute);font-weight:600"></span></h2>
+    <div class="sub" id="boardSub">—</div>
+    <div class="months" id="monthChips"></div>
+    <div class="podium" id="podium"></div>
+    <div class="search">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg>
+      <input id="q" type="search" placeholder="ابحث باسم متسابق…" oninput="renderRows()">
+    </div>
+    <div class="rows" id="rows"></div>
+  </section>
+
+  <!-- كيف تُحسب -->
+  <section class="card">
+    <h2>⚙️ كيف تُحسب درجاتك؟</h2>
+    <div class="sub">كل ما تسجّله في «الرفيق اليومي» يُجمع تلقائيًا في درجة اليوم، ثم تُرتَّب درجات الشهر:</div>
+    <div class="how">
+      <div class="how-row"><span class="ic">🕌</span><span>الصلوات المفروضة وأذكار بعدها والسنن الرواتب</span><b>تلقائي</b></div>
+      <div class="how-row"><span class="ic">📖</span><span>القرآن الكريم وورد الختمة اليومي</span><b>تلقائي</b></div>
+      <div class="how-row"><span class="ic">📿</span><span>أذكار الصباح والمساء والنوم</span><b>تلقائي</b></div>
+      <div class="how-row"><span class="ic">📚</span><span>رياض الصالحين <b style="color:var(--gold)">+30</b></span><b>ورد يومي</b></div>
+      <div class="how-row"><span class="ic">📕</span><span>قصص الأنبياء <b style="color:var(--gold)">+20</b></span><b>ورد يومي</b></div>
+      <div class="how-row"><span class="ic">🕌</span><span>السيرة النبوية <b style="color:var(--gold)">+25</b></span><b>ورد يومي</b></div>
+      <div class="how-row"><span class="ic">📖</span><span>ورد الختمة اليومي <b style="color:var(--gold)">+50</b></span><b>ورد يومي</b></div>
+    </div>
+    <div class="note">لا توجد أسئلة ولا إجابات تُدخل يدويًا: الترتيب مبني على عبادتك المسجَّلة فقط، ودرجة اليوم محدودة بسقف يومي يمنع التفاوت غير الواقعي.</div>
+  </section>
+
+  <!-- قاعدة البيانات -->
+  <section class="card">
+    <h2>🗂️ قاعدة بيانات المسابقة</h2>
+    <div class="sub">كل متسابق له سجل باسمه ودرجاته وترتيبه في كل شهر. يمكنك حفظ نسخة من القاعدة أو استعادتها أو دمج بطاقة متسابق.</div>
+    <div class="db-stats" id="dbStats"></div>
+    <div class="grid-actions">
+      <button class="btn soft" onclick="exportDb()">💾 حفظ نسخة من القاعدة</button>
+      <button class="btn soft" onclick="document.getElementById('impFile').click()">📥 استيراد ملف</button>
+      <button class="btn soft" onclick="document.getElementById('cardFile').click()">📄 دمج بطاقة متسابق</button>
+      <button class="btn danger" onclick="deleteDemo()">🧹 حذف البيانات التجريبية</button>
+    </div>
+    <input type="file" id="impFile" accept=".json,application/json" class="hidden" onchange="importDb(this)">
+    <input type="file" id="cardFile" accept=".json,application/json" class="hidden" onchange="importCard(this)">
+    <div class="note">⚠️ نسخة القاعدة تحتوي بيانات التواصل (بريد وواتساب) لكل المشاركين — احفظها في مكان خاص بك ولا تشاركها. لوحة الترتيب نفسها لا تُظهرها أبدًا.</div>
+  </section>
+</div>
+
+<!-- حسابي -->
+<div class="modal" id="accModal" onclick="if(event.target===this)closeAccount()">
+  <div class="modal-card" style="position:relative">
+    <button class="btn mini soft close-x" onclick="closeAccount()">✕</button>
+    <h3>🔐 حسابي</h3>
+    <div class="acc-row"><span class="lbl">الاسم في الترتيب</span><span class="val" id="accName" style="direction:rtl">—</span></div>
+    <div class="acc-row"><span class="lbl">البريد الإلكتروني</span><span class="val"><span id="accEmail">—</span><button class="eye" onclick="toggleSecret('email')" aria-label="إظهار البريد">👁</button></span></div>
+    <div class="acc-row"><span class="lbl">رقم الواتساب</span><span class="val"><span id="accPhone">—</span><button class="eye" onclick="toggleSecret('phone')" aria-label="إظهار الرقم">👁</button></span></div>
+    <div class="acc-row"><span class="lbl">تاريخ الانضمام</span><span class="val" id="accJoined" style="direction:rtl">—</span></div>
+    <div class="note">🔒 هذه البيانات لا تظهر لأي متسابق آخر — تُعرض لك وحدك على هذا الجهاز.</div>
+    <div class="grid-actions">
+      <button class="btn soft" onclick="renameMe()">✏️ تعديل الاسم</button>
+      <button class="btn soft" onclick="logoutMe()">🚪 تسجيل الخروج</button>
+    </div>
+    <button class="btn danger" style="margin-top:8px" onclick="deleteMe()">🗑️ حذف حسابي من المسابقة</button>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script src="./contest-points.js"></script>
+<script src="./contest-db.js"></script>
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var state = { tab: 'login', month: '', me: null, rows: [], revealed: false, searching: '' };
+
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function toast(msg){
+    var t=$('toast'); t.textContent=msg; t.classList.add('show');
+    clearTimeout(t._t); t._t=setTimeout(function(){ t.classList.remove('show'); }, 2200);
+  }
+  function msg(text, ok){
+    var m=$('authMsg'); m.className='msg '+(text?(ok?'ok':'err'):''); m.textContent=text||'';
+  }
+  function fmt(n){ return Number(n||0).toLocaleString('en-US'); }
+  function maskEmail(v){ var p=String(v||'').split('@'); return (p[0]||'').slice(0,2)+'•••@'+(p[1]||'—'); }
+  function maskPhone(m){
+    if(!m||!m.whatsapp) return '—';
+    var p=String(m.whatsapp);
+    return '+'+m.cc+' •••• '+(p.slice(-3));
+  }
+  function toggleTheme(){
+    var cur=document.documentElement.getAttribute('data-mode')==='light'?'light':'dark';
+    var next=cur==='dark'?'light':'dark';
+    document.documentElement.setAttribute('data-mode',next);
+    try{ localStorage.setItem('rm_theme',next); }catch(e){}
+    $('themeIco').textContent = next==='dark'?'☀️':'🌙';
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', next==='dark'?'#080e1a':'#fbf7ef');
+  }
+  window.toggleTheme=toggleTheme;
+
+  /* ---------- الدخول ---------- */
+  window.setTab=function(tab){
+    state.tab=tab;
+    $('tabLogin').classList.toggle('on', tab==='login');
+    $('tabReg').classList.toggle('on', tab==='reg');
+    $('regFields').classList.toggle('hidden', tab!=='reg');
+    $('loginFields').classList.toggle('hidden', tab==='reg');
+    $('authBtn').textContent = tab==='reg' ? 'إنشاء الحساب والمشاركة' : 'تسجيل الدخول';
+    msg('');
+  };
+
+  window.submitAuth=function(){
+    var btn=$('authBtn');
+    msg('');
+    btn.disabled=true;
+    var work;
+    if(state.tab==='reg'){
+      if($('rPw').value !== $('rPw2').value){ btn.disabled=false; msg('كلمتا المرور غير متطابقتين.'); return; }
+      work = RFQ_CONTEST.register({
+        name: $('rName').value, email: $('rEmail').value,
+        cc: $('rCc').value, whatsapp: $('rPhone').value,
+        password: $('rPw').value
+      });
+    } else {
+      work = RFQ_CONTEST.login($('lEmail').value, $('lPw').value);
+    }
+    work.then(function(member){
+      $('rPw').value=$('rPw2').value=$('lPw').value='';
+      msg(state.tab==='reg' ? 'تم إنشاء الحساب بنجاح — أهلاً بك 🌟' : 'تم الدخول ✓', true);
+      return syncMe(false).then(function(){ return member; });
+    }).then(function(){
+      return RFQ_CONTEST.ready.then(refreshAll);
+    }).catch(function(err){
+      msg(err && err.message ? err.message : 'حدث خطأ، حاول مرة أخرى.');
+    }).then(function(){
+      btn.disabled=false;
+      setTimeout(function(){ msg(''); }, 3200);
+    });
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key!=='Enter') return;
+    if($('accModal').classList.contains('show')) return;
+    if($('authView').classList.contains('hidden')) return;
+    if(e.target && e.target.tagName==='INPUT') submitAuth();
+  });
+
+  /* ---------- مزامنة الدرجات ---------- */
+  function syncMe(notify){
+    return RFQ_CONTEST.me().then(function(m){
+      if(!m) return null;
+      return RFQ_POINTS.mySummary(state.month || RFQ_CONTEST.currentMonth()).then(function(s){
+        return RFQ_CONTEST.saveMonth(m.id, s.month, s.pts, s.days).then(function(){
+          if(notify) toast('تمت مزامنة '+fmt(s.pts)+' نقطة لهذا الشهر ✓');
+          return s;
+        });
+      });
+    }).catch(function(err){
+      if(notify) toast(err && err.message ? err.message : 'تعذّرت المزامنة');
+      return null;
+    });
+  }
+  window.syncMe=syncMe;
+
+  /* ---------- العرض ---------- */
+  function refreshAll(){
+    return RFQ_CONTEST.me().then(function(m){
+      state.me = m;
+      $('authView').classList.toggle('hidden', !!m);
+      $('meView').classList.toggle('hidden', !m);
+      if(m){
+        $('meAvatar').textContent = (m.name||'؟').trim().charAt(0);
+        $('meName').textContent = m.name;
+        $('meSince').textContent = 'انضم في ' + RFQ_CONTEST.monthLabel(m.joined || RFQ_CONTEST.currentMonth());
+      }
+      return renderBoard();
+    }).then(refreshDbStats);
+  }
+
+  function renderChips(months){
+    var current = state.month;
+    $('monthChips').innerHTML = months.map(function(k){
+      return '<button class="mchip'+(k===current?' on':'')+'" onclick="selectMonth(\''+k+'\')">'+esc(RFQ_CONTEST.monthLabel(k))+'</button>';
+    }).join('') || '';
+  }
+  window.selectMonth=function(k){
+    state.month=k;
+    renderBoard();
+  };
+
+  function renderBoard(){
+    var month = state.month || RFQ_CONTEST.currentMonth();
+    state.month = month;
+    return RFQ_CONTEST.standings(month, { includeEmpty: true }).then(function(rows){
+      state.rows = rows;
+      var months = [];
+      for(var i=5;i>=0;i--) months.push(RFQ_CONTEST.shiftMonth(RFQ_CONTEST.currentMonth(), -i));
+      renderChips(months);
+      $('boardMonth').textContent = '· ' + RFQ_CONTEST.monthLabel(month);
+      var real = rows.filter(function(r){ return !r.demo; }).length;
+      $('boardSub').textContent = rows.length + ' متسابقًا (' + real + ' حسابًا مسجَّلًا) · تُحدَّث الدرجات عند فتح التطبيق أو المزامنة';
+      var top = rows.slice(0,3);
+      var medals=['🥇','🥈','🥉'];
+      $('podium').innerHTML = top.length ? top.map(function(r,i){
+        return '<div class="pod'+(i===0?' first':'')+'"><div class="medal">'+medals[i]+'</div><div class="nm">'+esc(r.name)+'</div><div class="pt">'+fmt(r.pts)+'</div><div class="dys">'+r.days+' يومًا</div></div>';
+      }).join('') : '<div class="empty" style="grid-column:1/-1">لا مشاركين في هذا الشهر بعد — كن أول المتسابقين.</div>';
+      renderRows();
+      if(state.me) renderMe(rows);
+    });
+  }
+
+  function renderRows(){
+    var q = ($('q').value||'').trim();
+    var rows = state.rows.filter(function(r){ return !q || r.name.indexOf(q)>-1; });
+    $('rows').innerHTML = rows.map(function(r){
+      var me = state.me && r.id===state.me.id;
+      return '<div class="rank-row'+(me?' me':'')+'">'
+        + '<span class="rk'+(r.rank<=3?' top':'')+'">'+r.rank+'</span>'
+        + '<span class="nm"><span class="txt">'+esc(r.name)+'</span>'+(me?'<span class="tag">أنا</span>':'')+(r.demo?'<span class="tag demo">تجريبي</span>':'')+'</span>'
+        + '<span class="pt">'+fmt(r.pts)+'</span>'
+        + '<span class="dys">'+r.days+' يومًا</span>'
+        + '</div>';
+    }).join('') || '<div class="empty">لا نتائج مطابقة.</div>';
+  }
+  window.renderRows=renderRows;
+
+  function renderMe(rows){
+    var mine = rows.filter(function(r){ return state.me && r.id===state.me.id; })[0];
+    if(!mine) return;
+    var leader = rows[0] || { pts: 0 };
+    $('kRank').textContent = '#' + mine.rank;
+    $('kPts').textContent = fmt(mine.pts);
+    $('kDays').textContent = mine.days;
+    $('kGap').textContent = (mine.rank===1 || !leader.pts) ? 'الأول 🎉' : fmt(Math.max(0, leader.pts - mine.pts));
+    RFQ_POINTS.mySummary(state.month).then(function(s){
+      $('meParts').innerHTML = [
+        ['الصلوات', s.parts.prayers], ['القرآن', s.parts.quran], ['الأذكار', s.parts.athkar],
+        ['السنن', s.parts.sunan], ['الكتب', s.parts.books]
+      ].map(function(x){ return '<div class="part"><b>'+fmt(x[1])+'</b><span>'+x[0]+'</span></div>'; }).join('');
+    });
+  }
+
+  function refreshDbStats(){
+    return RFQ_CONTEST.counts().then(function(c){
+      $('dbStats').innerHTML = [
+        ['حسابات مسجّلة', c.members], ['أعضاء تجريبيون', c.demo],
+        ['سجلات درجات', c.scores], ['شهور مسجّلة', c.months]
+      ].map(function(x){ return '<div class="db-stat"><b>'+fmt(x[1])+'</b><span>'+x[0]+'</span></div>'; }).join('');
+    }).catch(function(){});
+  }
+
+  /* ---------- الحساب ---------- */
+  window.openAccount=function(){
+    if(!state.me) return;
+    $('accName').textContent = state.me.name;
+    $('accJoined').textContent = RFQ_CONTEST.monthLabel(state.me.joined || RFQ_CONTEST.currentMonth());
+    state.revealed = false;
+    paintSecrets();
+    $('accModal').classList.add('show');
+  };
+  window.closeAccount=function(){ $('accModal').classList.remove('show'); };
+  function paintSecrets(){
+    var m = state.me;
+    if(!m) return;
+    $('accEmail').textContent = state.revealed ? (m.email||'—') : maskEmail(m.email);
+    $('accPhone').textContent = state.revealed ? ('+'+m.cc+' '+m.whatsapp) : maskPhone(m);
+  }
+  window.toggleSecret=function(){
+    state.revealed = !state.revealed;
+    paintSecrets();
+  };
+  window.logoutMe=function(){
+    RFQ_CONTEST.logout();
+    state.me=null;
+    closeAccount();
+    refreshAll();
+    toast('تم تسجيل الخروج');
+  };
+  window.renameMe=function(){
+    var v = prompt('الاسم الذي سيظهر في الترتيب:', state.me ? state.me.name : '');
+    if(v===null) return;
+    RFQ_CONTEST.updateName(v).then(function(m){
+      state.me=m; closeAccount(); refreshAll(); toast('تم تعديل الاسم ✓');
+    }).catch(function(e){ toast(e.message||'تعذّر التعديل'); });
+  };
+  window.deleteMe=function(){
+    if(!confirm('حذف حسابك من المسابقة نهائيًا مع درجاته؟ لا يمكن التراجع.')) return;
+    RFQ_CONTEST.deleteAccount().then(function(){
+      state.me=null; closeAccount(); refreshAll(); toast('تم حذف الحساب');
+    });
+  };
+
+  /* ---------- قاعدة البيانات ---------- */
+  window.exportDb=function(){
+    RFQ_CONTEST.exportAll().then(function(data){
+      download(JSON.stringify(data,null,2), 'rafiq-contest-db-'+RFQ_CONTEST.currentMonth()+'.json');
+      toast('تم حفظ نسخة القاعدة');
+    });
+  };
+  window.exportCard=function(){
+    RFQ_CONTEST.card().then(function(data){
+      download(JSON.stringify(data,null,2), 'rafiq-contest-card-'+data.month+'.json');
+      toast('تم تصدير بطاقتك');
+    }).catch(function(e){ toast(e.message||'تعذّر التصدير'); });
+  };
+  function download(text, name){
+    var blob = new Blob([text], {type:'application/json'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = name;
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function(){ a.remove(); URL.revokeObjectURL(a.href); }, 500);
+  }
+  function readFile(input){
+    return new Promise(function(resolve, reject){
+      var f = input.files && input.files[0];
+      if(!f) { reject(new Error('لم يتم اختيار ملف')); return; }
+      var r = new FileReader();
+      r.onload = function(){ try{ resolve(JSON.parse(String(r.result))); }catch(e){ reject(new Error('الملف غير صالح')); } };
+      r.onerror = function(){ reject(new Error('تعذّرت قراءة الملف')); };
+      r.readAsText(f);
+    });
+  }
+  window.importDb=function(input){
+    readFile(input).then(function(data){
+      return RFQ_CONTEST.importAll(data);
+    }).then(function(res){
+      toast('تم الدمج — '+res.added+' حسابًا جديدًا');
+      refreshAll();
+    }).catch(function(e){ toast(e.message||'فشل الاستيراد'); })
+      .then(function(){ input.value=''; });
+  };
+  window.importCard=function(input){
+    readFile(input).then(function(data){
+      return RFQ_CONTEST.importCard(data);
+    }).then(function(){
+      toast('تم دمج بطاقة المتسابق ✓');
+      renderBoard(); refreshDbStats();
+    }).catch(function(e){ toast(e.message||'فشل دمج البطاقة'); })
+      .then(function(){ input.value=''; });
+  };
+  window.deleteDemo=function(){
+    if(!confirm('حذف جميع الأعضاء التجريبيين ودرجاتهم؟ الحسابات الحقيقية تبقى كما هي.')) return;
+    RFQ_CONTEST.clearDemo().then(function(){ toast('تم حذف البيانات التجريبية'); refreshAll(); });
+  };
+
+  /* ---------- بدء ---------- */
+  function boot(){
+    var m = document.documentElement.getAttribute('data-mode');
+    $('themeIco').textContent = m==='light' ? '🌙' : '☀️';
+    $('hijriPill').textContent = 'الشهر الحالي: ' + RFQ_CONTEST.monthLabel(RFQ_CONTEST.currentMonth());
+    state.month = RFQ_CONTEST.currentMonth();
+    RFQ_CONTEST.ready
+      .then(function(){ return RFQ_CONTEST.me(); })
+      .then(function(m){
+        if(!m) return refreshAll();
+        return syncMe(false).then(refreshAll);
+      })
+      .catch(function(err){
+        console.warn(err);
+        refreshAll();
+      });
+  }
+  boot();
+})();
+</script>
+
+<script>function goToRafiqHome(){try{if(window.parent!==window){window.parent.postMessage({type:"rafiq-contest-home"},"*");return false}}catch(e){}try{if(document.referrer&&new URL(document.referrer).origin===location.origin&&history.length>1){history.back();return false}}catch(e){}location.href="index.html";return false}</script>
+</body>
+</html>
